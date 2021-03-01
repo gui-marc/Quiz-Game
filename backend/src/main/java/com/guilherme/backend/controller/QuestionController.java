@@ -1,5 +1,6 @@
 package com.guilherme.backend.controller;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,15 @@ public class QuestionController {
     @GetMapping
     public List<Question> getQuestions() {
         return questionRepository.findAll();
+    }
+
+    @GetMapping(path = "/random")
+    public List<Question> getRandomQuestions() {
+        // Shuffling questions
+        var randomQuestionsList = getQuestions();
+        Collections.shuffle(randomQuestionsList);
+
+        return randomQuestionsList;
     }
 
     @PostMapping
