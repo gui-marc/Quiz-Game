@@ -1,0 +1,52 @@
+@import "../../index.scss";
+
+.head {
+  padding: calc(14px + 3vmax) calc(10px + 3vmin);
+  background: linear-gradient($main-gradient);
+  color: white;
+
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: $main-box-shadow;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    width: 100%;
+  }
+
+  .description {
+    color: rgba($color: #fff, $alpha: 0.8);
+    margin: calc(10px + 3vmax) 0;
+  }
+
+  hr {
+    border: 0 none;
+    border-top: 2px dashed white;
+    opacity: 0.5;
+  }
+
+  h1 {
+    text-align: center;
+    margin: calc(10px + 3vmax) 0;
+  }
+
+  .game-hint {
+    text-align: center;
+  }
+
+  // On Game
+
+  .heading {
+    margin-top: calc(12px + 3vmax);
+  }
+
+  .question-index {
+    margin-top: calc(5px + 3vmax);
+
+    small {
+      font-size: calc(3px + 3vmin);
+    }
+  }
+}
