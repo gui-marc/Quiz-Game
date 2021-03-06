@@ -1,0 +1,13 @@
+.button-div {
+  flex: 1;
+  display: flex;
+  padding: calc(3px + 2vmax) 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
