@@ -1,0 +1,24 @@
+@import "../../index.scss";
+
+.button {
+  display: block;
+  padding: 16px 38px;
+  background: linear-gradient($main-gradient-side);
+  border: none;
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50px;
+  box-shadow: $main-box-shadow;
+  cursor: pointer;
+  outline: none;
+
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+
+  &:hover {
+    background: $main-color-dark;
+  }
+}
