@@ -1,0 +1,15 @@
+{
+  "short_name": "Quiz Game",
+  "name": "Web Development Quiz Game",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "52x52"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
