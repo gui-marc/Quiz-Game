@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// -- Variables
+
+// Colors
+$main-color: #00a3ff;
+$main-color-dark: #2152ff;
+
+$success-color: #7fe201;
+$success-color-dark: #04d68a;
+
+$warning-color: #ff4949;
+$warning-color-dark: #c52c35;
+
+// Gradients
+$main-gradient: to right top, $main-color-dark, $main-color;
+$main-gradient-side: to right, $main-color-dark, $main-color;
+
+$success-gradient: to right top, $success-color-dark, $success-color;
+$success-gradient-side: to right, $success-color-dark, $success-color;
+
+$warning-gradient: to right top, $warning-color-dark, $warning-color;
+$warning-gradient-side: to right, $warning-color-dark, $warning-color;
+
+// Box Shadows
+$main-box-shadow: 0px 10px 30px 0px rgba($main-color-dark, 0.3);
+
+$success-box-shadow: 0px 10px 30px 0px rgba($success-color-dark, 0.1);
+
+$warning-box-shadow: 0px 10px 30px 0px rgba($warning-color-dark, 0.1);
+
+// -- End Variables
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+
+h1 {
+  font-size: calc(16px + 3vmin);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: calc(12px + 3vmin);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: calc(10px + 3vmin);
+  font-weight: normal;
+}
+
+h4 {
+  font-size: calc(7px + 3vmin);
+  font-weight: 400;
+}
+
+p {
+  font-size: calc(3px + 3vmin);
+}
+
+// Util
+
+.half-opacity {
+  opacity: 0.5;
+}
