@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+// FOR DEV PURPOSES
+
 @RestController
 @RequestMapping("/alternatives")
 public class AlternativeController {
