@@ -25,6 +25,6 @@ public class Alternative {
 
     @ManyToOne
     @JoinColumn(name = "question_id")
-    @JsonIgnore // Ignore in GET call (or calls infinetly)
+    @JsonIgnore // Ignore in GET call (or calls infinete recursion)
     private Question question;
 }
