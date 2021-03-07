@@ -20,7 +20,7 @@ INSERT INTO QUESTION (heading, answer_index) VALUES ('Quais tags HTML são usada
 INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('table, trow, thead e tdescription.', 4);
 INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('table, tr, tf e td.', 4);
 INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('table, tablehead, tablebody, td e tr.', 4);
-INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('table, thead, tbody, tfoot, th, td e tr. (CORRETA)', 4);
+INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('table, thead, tbody, tfoot, th, td e tr.', 4);
 
 INSERT INTO QUESTION (heading, answer_index) VALUES ('Qual a principal diferença entre CSS Grid e Flexbox?', 2);
 INSERT INTO ALTERNATIVE (alternative, question_id) VALUES ('CSS Grid não age de forma responsiva, já Flexbox, sim.', 5);
