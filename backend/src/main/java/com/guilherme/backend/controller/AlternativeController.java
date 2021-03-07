@@ -1,7 +1,9 @@
 package com.guilherme.backend.controller;
 
-import java.util.Collections;
 import java.util.List;
+
+import com.guilherme.backend.models.Alternative;
+import com.guilherme.backend.repositories.AlternativeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,39 +16,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.guilherme.backend.models.Question;
-import com.guilherme.backend.repositories.QuestionRepository;
-
 @RestController
-@RequestMapping("/questions")
-public class QuestionController {
+@RequestMapping("/alternatives")
+public class AlternativeController {
 
     @Autowired
-    private QuestionRepository questionRepository;
+    private AlternativeRepository alternativeRepository;
 
     @GetMapping
-    public List<Question> getQuestions() {
-        return questionRepository.findAll();
-    }
-
-    @GetMapping(path = "/random")
-    public List<Question> getRandomQuestions() {
-        // Shuffling questions
-        var randomQuestionsList = getQuestions();
-        Collections.shuffle(randomQuestionsList);
-
-        return randomQuestionsList;
+    public List<Alternative> getAlternatives() {
+        return alternativeRepository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Question addQuestion(@RequestBody Question question) {
-        return questionRepository.save(question);
+    public Alternative addAlternative(@RequestBody Alternative alternative) {
+        return alternativeRepository.save(alternative);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteQuestion(@PathVariable Long id) {
-        questionRepository.deleteById(id);
+    public void deleteAlternative(@PathVariable Long id) {
+        alternativeRepository.deleteById(id);
     }
-
 }
