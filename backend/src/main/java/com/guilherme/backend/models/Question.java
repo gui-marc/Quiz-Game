@@ -18,12 +18,12 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // No real use in API
+    private Long id;
 
     @Column(nullable = false)
     private String heading;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.DETACH, orphanRemoval = true)
     private List<Alternative> alternatives;
 
     @Column(nullable = false)
