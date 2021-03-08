@@ -73,6 +73,8 @@ p {
   font-size: calc(3px + 3vmin);
 }
 
+// Responsivness
+
 @media (min-width: 1024px) {
   h1 {
     font-size: 50px;
@@ -92,6 +94,13 @@ p {
 
   p {
     font-size: 20px;
+  }
+
+  body {
+    background: url("./images/Bg-desktop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
