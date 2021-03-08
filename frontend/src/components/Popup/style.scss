@@ -1,0 +1,38 @@
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  * {
+    z-index: 100;
+  }
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  .card {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    margin: 0 calc(10px + 3vmin);
+    padding: 24px 30px;
+    border-radius: 20px;
+    color: #011457;
+
+    .heading {
+      display: flex;
+
+      h2 {
+        margin: 0 calc(5px + 2vmin);
+      }
+    }
+
+    p {
+      font-size: calc(8px + 1vmax);
+      margin: calc(3px + 1vmax) 0;
+    }
+  }
+}
