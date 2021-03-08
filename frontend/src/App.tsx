@@ -1,50 +1,50 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import "./App.scss";
 
 import Button from "./components/Button";
 import { Game } from "./components/Game";
 import Head from "./components/Head";
+import Popup from "./components/Popup";
+
+// Axios Headers
+axios.defaults.headers.get["Content-Type"] = "application/json;charset=utf-8";
+axios.defaults.headers.get["Access-Control-Allow-Origin"] = "*";
 
 export interface Question {
   heading: String;
-  alternatives: Array<String>;
+  alternatives: Array<any>;
   answerIndex: Number;
 }
 
-const firstQuestion: Question = {
-  heading: "Primeira Questão",
-  alternatives: ["Alternativa 1", "Alternativa 2", "Alternativa 3"],
-  answerIndex: 1,
+let questions: Array<Question>;
+
+const API_URL = "http://localhost:8080";
+
+const startGame = async () => {
+  await axios.get(`${API_URL}/questions/random`).then((res) => {
+    questions = res.data;
+  });
+  return questions;
 };
-
-const secondQuestion: Question = {
-  heading: "Segunda Questão",
-  alternatives: ["Alternativa 1", "Alternativa 2", "Alternativa 3"],
-  answerIndex: 1,
-};
-
-const thirdQuestion: Question = {
-  heading: "Terceira Questão",
-  alternatives: ["Alternativa 1", "Alternativa 2", "Alternativa 3"],
-  answerIndex: 1,
-};
-
-const questions: Array<Question> = [
-  firstQuestion,
-  secondQuestion,
-  thirdQuestion,
-];
-
-// const BASE_URL = "";
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState("start");
   const [questionNumber, setQuestionNumber] = useState(0);
+  const [isWarning, setIsWarning] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const restartGame = () => {
+    setShowPopup(false);
+    setGameState("start");
+    setQuestionNumber(0);
+  };
+
+  const verifyAlternative = () => {};
 
   const handleButtonClick = () => {
     if (gameState === "start") {
-      setGameState("game");
+      startGame().then(() => setGameState("game"));
     } else if (gameState === "game" && questionNumber < questions.length - 1) {
       //! Verificar se marcou alternativa correta
       setQuestionNumber(questionNumber + 1);
@@ -52,18 +52,30 @@ const App: React.FC = () => {
       gameState === "game" &&
       questionNumber === questions.length - 1
     ) {
-      console.log("Parabens, você ganhou o jogo!");
+      setIsWarning(false);
+      setShowPopup(true);
+      // restartGame();
     }
   };
 
   return (
     <div className="App">
-      <Head gameState={gameState} questionNumber={questionNumber} />
+      <Popup isShowing={showPopup} isWarning={isWarning}>
+        <Button color="success" onClick={restartGame} text="Recomeçar Jogo" />
+      </Popup>
+      <Head
+        gameState={gameState}
+        questionNumber={questionNumber}
+        questionHeading={
+          questions !== undefined ? questions[questionNumber].heading : " "
+        }
+      />
       {gameState === "game" ? (
         <Game question={questions[questionNumber]} />
       ) : null}
       <div className="button-div">
         <Button
+          color="main"
           onClick={handleButtonClick}
           text={gameState === "start" ? "Iniciar Jogo" : "Próximo"}
         />

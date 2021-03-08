@@ -4,9 +4,14 @@ import "./style.scss";
 interface Props {
   gameState: String;
   questionNumber: number;
+  questionHeading: String;
 }
 
-const Head: React.FC<Props> = ({ gameState, questionNumber }) => {
+const Head: React.FC<Props> = ({
+  gameState,
+  questionNumber,
+  questionHeading,
+}) => {
   if (gameState === "start")
     return (
       <div className="head">
@@ -32,9 +37,7 @@ const Head: React.FC<Props> = ({ gameState, questionNumber }) => {
           <small>/5</small>
         </h3>
         <hr />
-        <h3 className="heading">
-          Em Javascript, qual a diferença entre Set e Map?
-        </h3>
+        <h3 className="heading">{questionHeading}</h3>
       </div>
     );
 };
