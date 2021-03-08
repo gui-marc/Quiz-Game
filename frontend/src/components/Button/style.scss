@@ -21,4 +21,16 @@
   &:hover {
     background: $main-color-dark;
   }
+
+  &.main {
+    background: linear-gradient($main-gradient-side);
+  }
+
+  &.success {
+    background: linear-gradient($success-gradient-side);
+  }
+
+  &.warning {
+    background: linear-gradient($warning-gradient-side);
+  }
 }

@@ -5,11 +5,12 @@ import "./style.scss";
 interface Props {
   text: String;
   onClick: any;
+  color: String;
 }
 
-const Button: React.FC<Props> = ({ onClick, text }) => {
+const Button: React.FC<Props> = ({ onClick, text, color }) => {
   return (
-    <button className="button" onClick={onClick}>
+    <button className={`button ${color}`} onClick={onClick}>
       {text}
     </button>
   );
