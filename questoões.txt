@@ -1,0 +1,34 @@
+## Em javascript, qual a diferença entre Set e Map?
+
+-Os dois são conjuntos de objetos, porém o Set permite objetos duplicados, já o Map, não.
+-A diferença entre o Set e o Map é que o Map permite chaves duplicadas, já o Set, não.
+-Set é um conjunto que não permite objetos duplicados e o Map é uma coleção que trabalha com pares chave e valor. (CORRETA)
+-Map é uma coleção de pares chave e valor e não permite objetos duplicados, já o Set é um conjunto de objetos que permite objetos duplicados.
+
+## O que é closure em javascript?
+
+- É uma função que "lembra" seu escopo, mesmo quando é executada fora desse escopo. (CORRETA)
+- É uma função que não possui acesso a variável das funções exteriores após o retorno da função exterior.
+- É uma variável que armazena referências para as variáveis da função exterior.
+- É um tipo de escopo que possui acesso a variáveis externas desse escopo.
+
+## No CSS, qual a diferença entre pseudo-classes e pseudo-elementos?
+
+- Pseudo-classes são palavras-chave que especificam um estado especial do elemento selecionado, já pseudo-elementos permitem que você estilize uma parte específica do elemento selecionado.
+- A diferença entre pseudo-classes e pseudo-elementos é que pseudo-classes utilizam ":" como prefixo e pseudo-elementos utilizam "::".
+- Pseudo-elementos especificam um estado especial do elemento selecionado e pseudo-classes especificam uma parte especifica do elemento.
+- Pseudo-classes especificam um estado especial do elemento e pseudo-elementos permitem estilizar uma parte específica do elemento. Exemplo de sintaxe: p:first-line(pseudo-elemento) e p::hover(pseudo-classe)
+
+## Quais tags HTML são usadas para exibir os dados na forma tabular?
+
+- table, thead, tbody, tfoot, th, td e tr. (CORRETA)
+- table, tablehead, tablebody, td e tr.
+- table, tr, tf e td.
+- table, trow, thead e tdescription.
+
+## Qual a principal diferença entre CSS Grid e Flexbox?
+
+- CSS Grid não age de forma responsiva, já Flexbox, sim.
+- CSS Grid trabalha com 2 dimensões, já o Flexbox, com apenas 1. (CORRETA)
+- Flexbox permite até 3 dimensões, já o CSS Grid, apenas 2.
+- É impossível organizar componentes em apenas uma linha com CSS Grid, já com Flexbox, é possível.
