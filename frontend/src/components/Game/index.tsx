@@ -7,11 +7,18 @@ interface Props {
   question: Question;
 }
 
+const abcd = ["a", "b", "c", "d"];
+
 export const Game: React.FC<Props> = ({ question }) => {
   return (
-    <div className="game">
+    <div className="game" id="game">
       {question.alternatives.map((alternative, i) => {
-        return <Alternative text={alternative.alternative} key={i} />;
+        return (
+          <Alternative
+            text={`${abcd[i]}) ${alternative.alternative}`}
+            key={i}
+          />
+        );
       })}
     </div>
   );
