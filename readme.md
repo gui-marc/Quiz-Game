@@ -24,7 +24,8 @@ _OBS.: **O frontend precisa do backend** para funcionar corretamente!!_
 
 ## Backend
 
-Para iniciar a API backend, basta inicializar o arquivo `start.bat` na pasta `./backend/final/`
+Para iniciar a API backend, basta inicializar com o Spring Boot
+(Ocorreu um bug no arquivo de build "backend-0.0.1-SNAPSHOT.jar no qual ele não está de acordo com o UTF-8, portanto a melhor forma de inicializar a aplicação é por uma IDE iniciando pelo Spring Boot)
 
 _OBS.: É necessário ter o Java instalado em sua máquina para rodar a aplicação._
 
