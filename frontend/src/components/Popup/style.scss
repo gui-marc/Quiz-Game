@@ -36,3 +36,18 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .popup {
+    .card {
+      max-width: 500px;
+      max-height: 100%;
+
+      padding: 30px 40px;
+
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}

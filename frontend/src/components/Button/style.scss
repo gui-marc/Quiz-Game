@@ -2,20 +2,20 @@
 
 .button {
   display: block;
-  padding: 16px 38px;
+  padding: calc(8px + 2vmin) calc(18px + 5vmin);
   background: linear-gradient($main-gradient-side);
   border: none;
   margin: auto;
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 50px;
+  border-radius: 200px;
   box-shadow: $main-box-shadow;
   cursor: pointer;
   outline: none;
 
   color: white;
   text-align: center;
-  font-size: 22px;
+  font-size: calc(14px + 2vmin);
   font-weight: 500;
 
   &:hover {
@@ -32,5 +32,12 @@
 
   &.warning {
     background: linear-gradient($warning-gradient-side);
+  }
+}
+
+@media (min-width: 1024px) {
+  .button {
+    padding: 18px 36px;
+    font-size: 30px;
   }
 }

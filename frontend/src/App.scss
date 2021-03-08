@@ -11,3 +11,9 @@
   flex-direction: column;
   height: 100vh;
 }
+
+@media (min-width: 1024px) {
+  .button-div {
+    padding: 10px 0px;
+  }
+}

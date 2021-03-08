@@ -22,3 +22,18 @@
     background: linear-gradient(to top, $main-color-dark, $main-color);
   }
 }
+
+@media (min-width: 1024px) {
+  .game {
+    margin: 10px auto;
+    max-width: 60%;
+    padding: 20px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}

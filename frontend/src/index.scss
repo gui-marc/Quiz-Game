@@ -41,6 +41,10 @@ body {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./images/Bg-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 // Typography
@@ -67,6 +71,28 @@ h4 {
 
 p {
   font-size: calc(3px + 3vmin);
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
 
 // Util

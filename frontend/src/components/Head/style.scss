@@ -50,3 +50,42 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .head {
+    padding: 40px 0;
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      hr.lg-hide {
+        display: none;
+      }
+
+      h1 {
+        margin: 0;
+        text-align: right;
+      }
+    }
+    // On Game
+
+    .heading {
+      margin-top: 30px;
+    }
+
+    hr {
+      margin: 8px 0;
+    }
+
+    .question-index {
+      margin-top: 30px;
+    }
+  }
+}

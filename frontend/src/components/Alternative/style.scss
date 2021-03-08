@@ -6,7 +6,7 @@
   align-items: center;
   background-color: #fff;
   border-radius: 20px;
-  padding: calc(6px + 1vmax) 20px;
+  padding: calc(6px + 2vmax) calc(10px + 3vmin);
   margin-bottom: calc(3px + 3vmax);
   box-shadow: 0px 10px 30px rgba($color: #011457, $alpha: 0.1);
 
@@ -16,10 +16,26 @@
   }
 
   input {
+    cursor: pointer;
     display: inline-block;
     border: 1px solid $main-color;
     border-radius: 50px;
-    width: calc(10px + 2vmax);
-    height: calc(10px + 2vmax);
+    width: calc(10px + 3vmax);
+    height: calc(10px + 3vmax);
+  }
+}
+
+@media (min-width: 1024px) {
+  .alternative {
+    flex: 1;
+    margin: 0;
+    padding: 20px 30px;
+    height: 100%;
+    width: 100%;
+
+    input {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
