@@ -37,7 +37,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (orientation: landscape) {
   .popup {
     .card {
       max-width: 500px;

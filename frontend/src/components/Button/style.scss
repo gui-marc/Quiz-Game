@@ -35,7 +35,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (orientation: landscape) {
   .button {
     padding: 18px 36px;
     font-size: 30px;

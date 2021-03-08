@@ -75,7 +75,7 @@ p {
 
 // Responsivness
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (orientation: landscape) {
   h1 {
     font-size: 50px;
   }
