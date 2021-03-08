@@ -10,8 +10,8 @@ interface Props {
 export const Game: React.FC<Props> = ({ question }) => {
   return (
     <div className="game">
-      {question.alternatives.map((text, i) => {
-        return <Alternative text={text} key={i} />;
+      {question.alternatives.map((alternative, i) => {
+        return <Alternative text={alternative.alternative} key={i} />;
       })}
     </div>
   );
