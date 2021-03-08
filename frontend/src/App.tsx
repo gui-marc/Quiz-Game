@@ -3,7 +3,11 @@ import axios from "axios";
 import "./App.scss";
 
 import Button from "./components/Button";
-import { Game } from "./components/Game";
+import Game, {
+  isRightAlternative,
+  currentAlternative,
+  resetValidation,
+} from "./components/Game";
 import Head from "./components/Head";
 import Popup from "./components/Popup";
 
@@ -19,13 +23,14 @@ export interface Question {
 
 let questions: Array<Question>;
 
-const API_URL = "http://localhost:8080";
+// Getting questions from API
+const PORT = 8080;
+const API_URL = `http://localhost:${PORT}`;
 
 const startGame = async () => {
   await axios.get(`${API_URL}/questions/random`).then((res) => {
     questions = res.data;
   });
-  return questions;
 };
 
 const App: React.FC = () => {
@@ -40,21 +45,32 @@ const App: React.FC = () => {
     setQuestionNumber(0);
   };
 
-  const verifyAlternative = () => {};
-
   const handleButtonClick = () => {
     if (gameState === "start") {
-      startGame().then(() => setGameState("game"));
-    } else if (gameState === "game" && questionNumber < questions.length - 1) {
-      //! Verificar se marcou alternativa correta
-      setQuestionNumber(questionNumber + 1);
-    } else if (
-      gameState === "game" &&
-      questionNumber === questions.length - 1
-    ) {
-      setIsWarning(false);
+      startGame()
+        .then(() => setGameState("game"))
+        .catch((e) => console.log(e));
+      return;
+    } else if (currentAlternative === -1) {
+      // Forgot to point down an alternative
+      console.log("Você precisa marcar uma alternativa !!");
+      return;
+    } else if (gameState === "game" && isRightAlternative === true) {
+      if (questionNumber === questions.length - 1) {
+        // Won the game
+        setIsWarning(false);
+        setShowPopup(true);
+      } else {
+        // Right Answer
+        setQuestionNumber(questionNumber + 1);
+        resetValidation();
+        return;
+      }
+    } else if (gameState === "game" && isRightAlternative === false) {
+      // Wrong Answer
+      setIsWarning(true);
       setShowPopup(true);
-      // restartGame();
+      return;
     }
   };
 
