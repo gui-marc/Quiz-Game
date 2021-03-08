@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 // FOR DEV PURPOSES
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,7 @@ public class QuestionController {
     }
 
     @GetMapping(path = "/random")
+    @CrossOrigin(origins = "*")
     public List<Question> getRandomQuestions() {
         // Shuffling questions
         var randomQuestionsList = getQuestions();
